@@ -21,5 +21,6 @@ jobs:
     - name: Push Docker iamge
       uses: docker/build-push-action@v1
       with:
-        repository: manoelhc/project45
+        repository: manoelhc/project45/project45
         registry: docker.pkg.github.com
+        snapshot: true
