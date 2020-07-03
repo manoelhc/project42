@@ -19,4 +19,6 @@ jobs:
     - name: Test Docker iamge
       run: docker run manoelhc/project42:latest pytest
     - name: Push Docker iamge
-      run: docker push manoelhc/project42:latest
+      uses: docker/build-push-action@v1
+      with:
+        repository: manoelhc/project45
