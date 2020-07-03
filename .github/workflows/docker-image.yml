@@ -13,9 +13,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Bandit Check
-      uses: jpetrucciani/bandit-check@1.6.2
     - uses: actions/checkout@v2
+    - name: Bandit Check
+      uses: jpetrucciani/bandit-check@1.6.2    
+    - name: Test Code
+      run: make install-deps && make test
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag manoelhc/project42:$(date +%s) --tag manoelhc/project42:latest
     - name: Test Docker iamge
