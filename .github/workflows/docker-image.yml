@@ -2,32 +2,28 @@ name: Docker Image CI
 
 on:
   push:
-    branches: [ master ]
+    branches: [master]
   pull_request:
-    branches: [ master ]
+    branches: [master]
 
 jobs:
-
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Bandit Check
-      uses: jpetrucciani/bandit-check@1.6.2    
-    - name: Test Code
-      run: make install-deps && make test
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag manoelhc/project42:$(date +%s) --tag manoelhc/project42:latest
-    - name: Test Docker iamge
-      run: docker run manoelhc/project42:latest pytest
-    - name: Push Docker iamge
-      uses: docker/build-push-action@v1
-      with:
-        repository: manoelhc/project45
-        username: ${{ secrets.DOCKER_USERNAME }}
-        password: ${{ secrets.DOCKER_PASSWORD }}
-        tag_with_ref: true
-        tag_with_sha: true
-        tags: latest
+      - uses: actions/checkout@v2
+      - name: Test Code
+        run: make install-deps && make test && rm -r test_*
+      - name: Build the Docker image
+        run: docker build . --file Dockerfile --tag manoelhc/project42:$(date +%s) --tag manoelhc/project42:latest
+      - name: Bandit Check
+        uses: jpetrucciani/bandit-check@1.6.2
+      - name: Push Docker iamge
+        uses: docker/build-push-action@v1
+        with:
+          repository: manoelhc/project45
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+          tag_with_ref: true
+          tag_with_sha: true
+          tags: latest
