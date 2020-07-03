@@ -1,6 +1,6 @@
 test:
-	flake8 --statistics
-	pytest -v --cov
+	flake8 --statistics --exclude=*/lib/*
+	pytest -v --cov --ignore-glob='*/lib/*'
 test-helm:
 	helm install --dry-run --debug ./chart
 install-python:
