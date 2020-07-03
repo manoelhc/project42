@@ -9,10 +9,12 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    strategy:
-      python-version: [3.7.4]
     steps:
       - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: "3.7.4"
+          architecture: "x64"
       - name: Test Code
         run: make install-deps && make test && rm -r test_*
       - name: Build the Docker image
