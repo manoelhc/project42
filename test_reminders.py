@@ -16,7 +16,6 @@ def test_add_ok_reminder(client):
                      data='{"time": "00:01", "message": "temp"}')
 
     data = json.loads(rv.data)
-    print(data)
     assert 'ok' in data['status']
 
 
