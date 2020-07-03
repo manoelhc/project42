@@ -2,7 +2,7 @@ test:
 	flake8 --statistics --exclude=*/lib/*
 	pytest -v --cov --ignore-glob='*/lib/*'
 test-helm:
-	helm install --dry-run --debug ./project-chart
+	helm install --dry-run --debug ./chart
 install-python:
 	pyenv install 3.7.4
 	pyenv local 3.7.4
@@ -16,6 +16,6 @@ destroy-minikube:
 	minikube stop -p project45
 	minikube delete -p project45
 install:
-	helm install ./project-chart
+	helm install ./chart
 run-local:
 	python -m flask run
