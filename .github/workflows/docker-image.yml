@@ -18,3 +18,5 @@ jobs:
       run: docker build . --file Dockerfile --tag manoelhc/project42:$(date +%s) --tag manoelhc/project42:latest
     - name: Test Docker iamge
       run: docker run manoelhc/project42:latest pytest
+    - name: Push Docker iamge
+      run: docker push manoelhc/project42:latest
