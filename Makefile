@@ -3,9 +3,10 @@ test:
 	pytest -v --cov
 test-helm:
 	helm install --dry-run --debug ./project-chart
-install-deps:
+install-python:
 	pyenv install 3.7.4
 	pyenv local 3.7.4
+install-deps:
 	pip install -r requirements.txt
 	pip install flake8 pytest-cov freeze
 install-minikube:
