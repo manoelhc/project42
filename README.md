@@ -1,4 +1,4 @@
-# project42
+# project42 [![Build Status](https://travis-ci.com/manoelhc/project42.svg?branch=master)](https://travis-ci.com/manoelhc/project42)
 Simple Flask app
 
 ## Why 42?
