@@ -23,7 +23,7 @@ jobs:
     - name: Push Docker iamge
       uses: docker/build-push-action@v1
       with:
-        repository: manoelhc/project45
+        name: manoelhc/project45
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
         
