@@ -22,3 +22,4 @@ jobs:
       uses: docker/build-push-action@v1
       with:
         repository: manoelhc/project45
+        registry: docker.pkg.github.com
