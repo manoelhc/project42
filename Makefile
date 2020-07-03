@@ -1,5 +1,5 @@
 test:
-	flake8 --statistics
+	flake8 --statistics flake8 --exclude=*/lib/*
 	pytest -v --cov
 test-helm:
 	helm install --dry-run --debug ./project-chart
