@@ -6,4 +6,4 @@ https://en.wikipedia.org/wiki/42_(number)#The_Hitchhiker's_Guide_to_the_Galaxy
 
 
 ## Docker Repo
-https://hub.docker.com/r/manoelhc/project45/tags
+https://hub.docker.com/r/manoelhc/project42/tags
