@@ -7,8 +7,8 @@ install-python:
 	pyenv install 3.7.4
 	pyenv local 3.7.4
 install-deps:
-	pip3 install -r requirements.txt
-	pip3 install flake8 pytest-cov freeze
+	pip install -r requirements.txt
+	pip install flake8 pytest-cov freeze
 install-minikube:
 	minikube start -p project45
 	minikube addons enable helm-tiller -p project45

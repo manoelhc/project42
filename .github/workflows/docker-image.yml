@@ -9,7 +9,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
+    strategy:
+      python-version: [3.7.4]
     steps:
       - uses: actions/checkout@v2
       - name: Test Code
