@@ -4,8 +4,16 @@ WORKDIR /app
 COPY requirements.txt .
 COPY app.py .
 
-RUN pip install -r requirements.txt
-RUN rm requirements.txt
+RUN apk --no-cache add --virtual build-dependencies \
+    build-base \
+    py-mysqldb \
+    gcc \
+    libc-dev \
+    libffi-dev \
+    mariadb-dev \
+    && pip install -qq -r requirements.txt \
+    && rm -rf .cache/pip \
+    && apk del build-dependencies
 
 EXPOSE 5000
 CMD [ "python", "-m", "flask", "run" ]
