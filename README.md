@@ -1,4 +1,4 @@
-# project42 [![Build Status](https://travis-ci.com/manoelhc/project42.svg?branch=master)](https://travis-ci.com/manoelhc/project42) ![Docker Image CI](https://github.com/manoelhc/project42/workflows/Docker%20Image%20CI/badge.svg)
+# project42 ![Docker Image CI](https://github.com/manoelhc/project42/workflows/Docker%20Image%20CI/badge.svg)
 Simple Flask app
 
 ## Why 42?
