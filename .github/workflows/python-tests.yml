@@ -19,7 +19,3 @@ jobs:
         run: make install-deps
       - name: Run tests
         run: make test
-      - name: Coveralls GitHub Action
-        uses: coverallsapp/github-action@v1.1.1
-        with:
-          github-token: ${{ secrets.XXXXXX }}
