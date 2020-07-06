@@ -12,6 +12,7 @@ RUN apk --no-cache add --virtual build-dependencies \
     libffi-dev \
     mariadb-dev \
     mariadb-connector-c \
+    mariadb-connector-c-dev \
     && pip install -qq -r requirements.txt \
     && rm -rf .cache/pip \
     && apk del build-dependencies
