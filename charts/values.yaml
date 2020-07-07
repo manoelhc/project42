@@ -13,6 +13,9 @@ imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
 
+mysql:
+  connString: sqlite://
+
 serviceAccount:
   # Specifies whether a service account should be created
   create: true
@@ -36,18 +39,18 @@ service:
   port: 5000
 
 ingress:
-  enabled: false
-  annotations: {}
-    # kubernetes.io/ingress.class: nginx
-    # kubernetes.io/tls-acme: "true"
+  enabled: true
+  annotations:
+     kubernetes.io/ingress.class: nginx
+     kubernetes.io/tls-acme: "true"
   hosts:
     - host: project42.local
-      paths: []
-
-  tls: []
-  #  - secretName: chart-example-tls
-  #    hosts:
-  #      - chart-example.local
+      paths: 
+        - "/"
+  tls: 
+    - secretName: project42
+      hosts:
+        - local
 
 resources:
   # We usually recommend not to specify default resources and to leave this as a conscious
